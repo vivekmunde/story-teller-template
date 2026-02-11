@@ -4,47 +4,50 @@ globs: ["**/*"]
 ---
 
 ## Architecture & Code Quality
-- Use named exports only.
-- Export all intended public members at the end of each file.
-- Declare each React context in its own dedicated file.
-- Create a dedicated hook that returns each context value.
-- Read context values only through their dedicated hooks.
+- Use named exports only; do not use default exports.
+- Export all public API members at the end of each file.
+- Put each React context in its own file.
+- Expose each context via a dedicated hook; do not read context directly in components.
+- Use that hook as the only way to read the context value.
 
 ## Design Principles
-- Follow the Single Responsibility Principle.
-- Follow DRY (Do not repeat yourself).
+- Apply the Single Responsibility Principle.
+- Keep code DRY (Do Not Repeat Yourself).
+
+## TypeScript & Types
+- Use of `any` is strictly prohibited; use proper types or `unknown` instead.
 
 ## Code Documentation
-- Add IDE IntelliSense-friendly comments and descriptions for every component, hook, and function.
-- Document every member of a type, props object, or argument object with a clear comment.
-- Add a clear comment for every function argument.
-- Always verify spelling in identifiers, comments, docs, and tests.
+- Add IntelliSense-friendly comments for every component, hook, and function.
+- Document each member of types, props, and argument objects with a short comment.
+- Add a brief comment for every function parameter.
+- Check spelling in identifiers, comments, documentation, and tests.
 
 ## README.md Documentation
-- Keep documentation developer-friendly and focused on practical usage.
-- Use simple, clear English that is easy to understand.
-- Provide code examples where they improve understanding.
+- Keep docs aimed at developers and focused on how to use the project.
+- Use simple, clear English.
+- Include code examples when they help understanding.
 - Prefer realistic, production-like examples.
-- Always verify spelling in README content, headings, and code samples.
-- Avoid adding line breaks only for formatting; rely on project formatting settings.
-- Avoid using the word "you"; use neutral, descriptive phrasing instead.
+- Check spelling in README text, headings, and code samples.
+- Do not add manual line breaks for layout; use the project’s formatter.
+- Prefer neutral, descriptive wording; avoid addressing the reader as “you”.
 
 ## Testing
 - Maintain 100% test coverage.
-- Start every test case description with a capital letter.
-- Ensure each test case validates a single behavior.
-- In tests, validate default behavior first, then cover custom values.
+- Start every test description with a capital letter.
+- Each test case should assert one behavior.
+- In tests, assert default behavior first, then custom or edge cases.
 
 ## Naming
 - Use dash-case for file names.
-- Prefix all type aliases with `T`.
-- Suffix all props types with `Props`.
-- Suffix all function argument types with `TArgs`.
-- Name context files with a `-context` suffix (e.g., `story-configuration-context.tsx`).
-- Name provider files with a `-provider` suffix (e.g., `story-configuration-provider.tsx`).
-- Name React context values with a `Context` suffix (e.g., `StoryConfigurationContext`).
-- Name providers with a `Provider` suffix (e.g., `StoryConfigurationProvider`).
+- Prefix type aliases with `T`.
+- Suffix props types with `Props`.
+- Suffix function argument types with `TArgs`.
+- Use a `-context` suffix for context files (e.g. `story-configuration-context.tsx`).
+- Use a `-provider` suffix for provider files (e.g. `story-configuration-provider.tsx`).
+- Use a `Context` suffix for React context values (e.g. `StoryConfigurationContext`).
+- Use a `Provider` suffix for provider names (e.g. `StoryConfigurationProvider`).
 
 ## Components
 - Define and export a dedicated props type for every component, hook, and function.
-- Use `<React.Fragment>` instead of `<>` fragments.
+- Use `<React.Fragment>` instead of the `<>` shorthand.
