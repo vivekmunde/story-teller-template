@@ -1,0 +1,50 @@
+---
+description: Project rules
+globs: ["**/*"]
+---
+
+## Architecture & Code Quality
+- Use named exports only.
+- Export all intended public members at the end of each file.
+- Declare each React context in its own dedicated file.
+- Create a dedicated hook that returns each context value.
+- Read context values only through their dedicated hooks.
+
+## Design Principles
+- Follow the Single Responsibility Principle.
+- Follow DRY (Do not repeat yourself).
+
+## Code Documentation
+- Add IDE IntelliSense-friendly comments and descriptions for every component, hook, and function.
+- Document every member of a type, props object, or argument object with a clear comment.
+- Add a clear comment for every function argument.
+- Always verify spelling in identifiers, comments, docs, and tests.
+
+## README.md Documentation
+- Keep documentation developer-friendly and focused on practical usage.
+- Use simple, clear English that is easy to understand.
+- Provide code examples where they improve understanding.
+- Prefer realistic, production-like examples.
+- Always verify spelling in README content, headings, and code samples.
+- Avoid adding line breaks only for formatting; rely on project formatting settings.
+- Avoid using the word "you"; use neutral, descriptive phrasing instead.
+
+## Testing
+- Maintain 100% test coverage.
+- Start every test case description with a capital letter.
+- Ensure each test case validates a single behavior.
+- In tests, validate default behavior first, then cover custom values.
+
+## Naming
+- Use dash-case for file names.
+- Prefix all type aliases with `T`.
+- Suffix all props types with `Props`.
+- Suffix all function argument types with `TArgs`.
+- Name context files with a `-context` suffix (e.g., `story-configuration-context.tsx`).
+- Name provider files with a `-provider` suffix (e.g., `story-configuration-provider.tsx`).
+- Name React context values with a `Context` suffix (e.g., `StoryConfigurationContext`).
+- Name providers with a `Provider` suffix (e.g., `StoryConfigurationProvider`).
+
+## Components
+- Define and export a dedicated props type for every component, hook, and function.
+- Use `<React.Fragment>` instead of `<>` fragments.
